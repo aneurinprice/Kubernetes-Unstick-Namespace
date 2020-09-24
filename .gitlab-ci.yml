@@ -1,0 +1,15 @@
+stages:
+  - test
+
+test:
+  tags:
+    - docker
+  stage: test
+  image:
+    name: bitnami/kubectl
+    entrypoint: [""]
+  script:
+    - kubectl apply -f .ci-cd/test-ns.yml
+    - kubectl delete ns test-ns
+    - ./namesapce-cleanup.sh test-ns
+
