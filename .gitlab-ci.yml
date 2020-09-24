@@ -10,6 +10,5 @@ test:
     entrypoint: [""]
   script:
     - kubectl apply -f .ci-cd/test-ns.yml
-    - kubectl delete ns test-ns
+    - kubectl delete ns test-ns --wait=false
     - ./namesapce-cleanup.sh test-ns
-
