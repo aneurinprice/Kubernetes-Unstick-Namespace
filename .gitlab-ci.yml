@@ -11,4 +11,4 @@ test:
   script:
     - kubectl apply -f .ci-cd/test-ns.yml
     - kubectl delete ns test-ns --wait=false
-    - ./namesapce-cleanup.sh test-ns
+    - ./namespace-cleanup.sh test-ns
